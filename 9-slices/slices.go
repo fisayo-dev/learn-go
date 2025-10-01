@@ -25,6 +25,9 @@ func main() {
 	// fmt.Println("Max length",len(mySlice))
 	// fmt.Println("Max cap",cap(mySlice))
 
-	fmt.Println("Total sum is:",sums(2,4,4,5))
+	// Or
+	nums := []int{2,3,4,5,6}
+
+	fmt.Println("Total sum is:",sums(nums...))
 
 }
