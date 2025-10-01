@@ -4,15 +4,29 @@ import "fmt"
 
 // Variadic function
 
-func sums(nums ...int) int {
-	num := 0
-	for i := 0; i < len((nums)); i++ {
-		num += nums[i]
+// func sums(nums ...int) int {
+// 	num := 0
+// 	for i := 0; i < len((nums)); i++ {
+// 		num += nums[i]
+// 	}
+
+// 	return num
+// }
+
+// Create matrix
+func createMatrix (rows, cols int) [][]int {
+	matrix := make([][]int,0)
+	for i := 0; i < rows; i++ {
+		row := make([]int,0)
+		for j := 0; j < cols; j++ {
+			row = append(row, i*j) 
+		}
+		matrix = append(matrix, row)
 	}
 
-	return num
-}
+	return matrix
 
+}
 func main() {
 
 	// a := [5]int{6, 3, 5, 6, 7} // An array
@@ -26,9 +40,10 @@ func main() {
 	// fmt.Println("Max cap",cap(mySlice))
 
 	// Or
-	nums := []int{2, 3, 4, 5, 6}
-	nums = append(nums, 3, 10, 20)
+	// nums := []int{2, 3, 4, 5, 6}
+	// nums = append(nums, 3, 10, 20)
 
-	fmt.Println("Total sum is:", sums(nums...))
+	// fmt.Println("Total sum is:", sums(nums...))
 
+	fmt.Println(createMatrix(10,10))
 }
