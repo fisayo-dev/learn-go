@@ -6,8 +6,8 @@ import "fmt"
 
 func sums(nums ...int) int {
 	num := 0
-	for i := 0; i < len((nums)); i ++ {
-		num += (nums)[i]
+	for i := 0; i < len((nums)); i++ {
+		num += nums[i]
 	}
 
 	return num
@@ -26,8 +26,8 @@ func main() {
 	// fmt.Println("Max cap",cap(mySlice))
 
 	// Or
-	nums := []int{2,3,4,5,6}
+	nums := []int{2, 3, 4, 5, 6}
 
-	fmt.Println("Total sum is:",sums(nums...))
+	fmt.Println("Total sum is:", sums(nums...))
 
 }
