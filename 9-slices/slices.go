@@ -27,6 +27,7 @@ func main() {
 
 	// Or
 	nums := []int{2, 3, 4, 5, 6}
+	nums = append(nums, 3, 10, 20)
 
 	fmt.Println("Total sum is:", sums(nums...))
 
