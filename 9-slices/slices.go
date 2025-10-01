@@ -26,6 +26,7 @@ func createMatrix (rows, cols int) [][]int {
 
 	return matrix
 }
+// Create multiplication table
 func createMultiplicationTable (num, limit int) [][]int {
 	table := make([][]int,0)
 	for i := 1; i <= num; i++ {
@@ -38,6 +39,15 @@ func createMultiplicationTable (num, limit int) [][]int {
 
 	return table
 }
+
+func showUserNames(names []string) ([]int, string) {
+	indexedNames := []int{}
+	for i, _ := range names {
+		indexedNames = append(indexedNames, i)
+	}
+	return indexedNames, ""
+}
+
 func main() {
 
 	// a := [5]int{6, 3, 5, 6, 7} // An array
@@ -57,5 +67,7 @@ func main() {
 	// fmt.Println("Total sum is:", sums(nums...))
 
 	// fmt.Println(createMatrix(10,10))
-	fmt.Println(createMultiplicationTable(10,12))
+	// fmt.Println(createMultiplicationTable(10,12))
+	msg := []string{"daniel", "moses", "joseph"}
+	fmt.Println(showUserNames(msg))
 }
