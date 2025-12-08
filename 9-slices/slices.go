@@ -43,7 +43,8 @@ func createMultiplicationTable (num, limit int) [][]int {
 func showUserNames(names []string) ([]int, []string) {
 	indexedNames := []int{}
 	sortedNames := []string{}
-	for i := range names  {
+	// Alternative (olden method is doing ) for i: = 0; i< len(names); i ++ 
+	for i := range names  { 
 		indexedNames = append(indexedNames, i+1)
 		sortedNames = append(sortedNames, names[i])
 	}
