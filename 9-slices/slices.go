@@ -40,13 +40,15 @@ func createMultiplicationTable (num, limit int) [][]int {
 	return table
 }
 
-func showUserNames(names []string) ([]int, string) {
+func showUserNames(names []string) ([]int, []string) {
 	indexedNames := []int{}
-	for i := range names {
-		indexedNames = append(indexedNames, i)
+	sortedNames := []string{}
+	for i := range names  {
+		indexedNames = append(indexedNames, i+1)
+		sortedNames = append(sortedNames, names[i])
 	}
 	
-	return indexedNames, ""
+	return indexedNames, sortedNames
 }
 
 func main() {
