@@ -2,20 +2,28 @@ package main
 
 import "fmt"
 
-// Rectangle types
+// Types
+// - Rectangle
 type rect struct {
 	width  float64
 	height float64
 }
 
+// - Circle
+type circle struct {
+	radius float64
+}
+
+// Shape interface
 type shape interface {
 	area() float64
 	perimeter() float64
 }
 
+// Constant
 const PI = 3.142
 
-// Area and perimter methods to rectangle struct
+// Methods for rect struct
 func (r rect) area() float64 {
 	return r.width * r.height
 }
@@ -24,12 +32,7 @@ func (r rect) perimeter() float64 {
 	return 2 * (r.height + r.width)
 }
 
-// Circle types
-type circle struct {
-	radius float64
-}
-
-// Area and perimter methods to circle struct
+// Methods for circle struct
 func (c circle) area() float64 {
 	return PI * c.radius * c.radius
 }
@@ -38,6 +41,7 @@ func (c circle) perimeter() float64 {
 	return 2 * PI * c.radius
 }
 
+// Func to get shape details
 func getShapeDetails(s shape) {
 	// Assertion doene with if else
 
@@ -59,13 +63,14 @@ func getShapeDetails(s shape) {
 	// Assertion by Switch case
 	switch v := s.(type) {
 	case rect:
-		fmt.Println("This width of the reactangle is", v.width)
-		fmt.Println("This height of the reactangle is", v.height)
-		fmt.Printf("This area of the reactangle is %.2f\n", v.area())
+		fmt.Println("The width of the reactangle is", v.width)
+		fmt.Println("The height of the reactangle is", v.height)
+		fmt.Printf("The area of the reactangle is %.2f\n", v.area())
 		fmt.Println("============================")
 	case circle:
-		fmt.Println("This radius of circle is", v.radius)
-		fmt.Printf("This area of the cricle is %.2f\n", v.area())
+		fmt.Println("The radius of circle is", v.radius)
+		fmt.Printf("The area of the circle is %.2f\n", v.area())
+		fmt.Printf("The perimeter of the circle is %.2f\n", v.perimeter())
 		fmt.Println("============================")
 	default:
 		fmt.Println("This shape is neither a circle nor a rectangle")
