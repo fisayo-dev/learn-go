@@ -44,9 +44,9 @@ func showUserNames(names []string) ([]int, []string) {
 	indexedNames := []int{}
 	sortedNames := []string{}
 	// Alternative (olden method is doing ) for i: = 0; i< len(names); i ++ 
-	for i := range names  { 
+	for i, name := range names  { 
 		indexedNames = append(indexedNames, i+1)
-		sortedNames = append(sortedNames, names[i])
+		sortedNames = append(sortedNames, name)
 	}
 	
 	return indexedNames, sortedNames
