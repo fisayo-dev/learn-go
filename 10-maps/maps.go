@@ -7,6 +7,10 @@ type members struct {
 	role string
 }
 
+func (m members) printStmt() string{
+	return fmt.Sprintf("is %v years old and is a %v", m.age, m.role)
+}
+
 func main() {
 	// declaring a map,
 	fscMembers := map[string]members{
@@ -16,5 +20,6 @@ func main() {
 		"Nifemi": {20, "Project Manager"},
 	}
 
-	fmt.Println(fscMembers["Olema"].age)
+	// fmt.Println(fscMembers["Olema"].age)
+	fmt.Println(fscMembers["Olema"].printStmt())
 }
