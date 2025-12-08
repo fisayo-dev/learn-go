@@ -21,5 +21,5 @@ func main() {
 	}
 
 	// fmt.Println(fscMembers["Olema"].age)
-	fmt.Println(fscMembers["Olema"].printStmt())
+	fmt.Println("Olema",fscMembers["Olema"].printStmt())
 }
