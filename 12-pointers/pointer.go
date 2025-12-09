@@ -5,6 +5,14 @@ import (
 	"strings"
 )
 
+type car struct {
+	color string
+}
+
+func (c *car) setColor(color string) {
+	c.color = color
+}
+
 // Declaring that message is a type of pointer
 func removeProfanity(message *string) {
 	messageVal := *message // Destructuring message to normal string
@@ -16,6 +24,8 @@ func removeProfanity(message *string) {
 	*message = messageVal
 }
 
+
+
 func main() {
 	msg1 := "Shut the fuck up"
 	msg2 := "Men, shoot"
@@ -26,5 +36,10 @@ func main() {
 	fmt.Println("Modified words", msg2)
 	removeProfanity(&msg3)
 	fmt.Println("Modified words", msg3)
+
+	myOwnColor := car{"red"}
+	myOwnColor.setColor("blue")
+	println("Color after change:" , myOwnColor.color)
+
 }
 
