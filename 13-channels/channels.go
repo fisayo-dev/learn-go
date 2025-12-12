@@ -34,6 +34,7 @@ func test(numBatches int){
 	go sendReports(numBatches, numSentCh)
 
 	fmt.Println("Start counting...")
+	// It doesn't prit the numReports until the channel has been closed
 	numReports := countReports(numSentCh)
 	fmt.Printf("%v reports sent!\n", numReports)
 	fmt.Println("===================")
